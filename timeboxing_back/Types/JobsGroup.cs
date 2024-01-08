@@ -26,7 +26,10 @@
 
         public bool RemoveJob(Job job)
         {
-            return Jobs.Remove(Jobs.First(j => j.Id == job.Id));
+            if (Jobs.Any(j => j.Id == job.Id))
+                return Jobs.Remove(Jobs.First(j => j.Id == job.Id));
+
+            return false;
         }
 
         public bool UpdateJob(Job job)
