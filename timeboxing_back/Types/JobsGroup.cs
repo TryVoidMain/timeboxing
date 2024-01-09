@@ -1,6 +1,6 @@
 ﻿namespace timeboxing_back.Types
 {
-    public class JobsGroup : IEntity
+    public class JobsGroup : IEntity, IJobsCollection
     {
         public Guid Id { get; init; }
         public List<Job> Jobs { get; set; }
@@ -37,7 +37,7 @@
             if (Jobs.Any(j => j.Id == job.Id))
             {
                 var currentJob = Jobs.First(j => j.Id == job.Id);
-                currentJob = job.DeepCopy();
+                currentJob = job;
                 return true;
             }
 

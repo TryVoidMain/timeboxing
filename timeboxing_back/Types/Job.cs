@@ -1,6 +1,6 @@
 ﻿namespace timeboxing_back.Types
 {
-    public class Job : IEntity
+    public class Job : IEntity, ICloneable
     {
         public Guid Id { get; init; }
         public string Title { get; set; }
@@ -25,7 +25,7 @@
             return (Job)this.MemberwiseClone();
         }
 
-        public Job DeepCopy()
+        public object Clone()
         {
             return new Job(Title, Description) { 
                 Status = Status,

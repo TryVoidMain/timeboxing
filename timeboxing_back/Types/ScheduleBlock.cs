@@ -1,6 +1,6 @@
 ﻿namespace timeboxing_back.Types
 {
-    public class ScheduleBlock : IEntity
+    public class ScheduleBlock : IEntity, ICloneable
     {
         public Guid Id { get; init; }
         public TimeOnly StartTime { get; set; }
@@ -13,6 +13,14 @@
             JobToWork = job;
             StartTime = startTime;
             EndTime = endTime;
+        }
+        public ScheduleBlock Copy()
+        {
+            return (ScheduleBlock)MemberwiseClone();
+        }
+        public object Clone()
+        {
+            return new ScheduleBlock(JobToWork, StartTime, EndTime);
         }
     }
 }
