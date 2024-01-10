@@ -1,0 +1,48 @@
+﻿namespace timeboxing_back.Types
+{
+    public class JobsList : IEntity
+    {
+        private List<JobsGroup> groups = new List<JobsGroup>();
+
+        public Guid Id { get; init; }
+
+        public JobsList() 
+        {
+            Id = Guid.NewGuid();
+        }
+
+        public bool AddJobsGroup(JobsGroup group)
+        {
+            if (!groups.Any(g => g.Id == group.Id || g.Title == group.Title))
+            {
+                groups.Add(group);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool RemoveJobsGroup(JobsGroup group)
+        {
+            if (!groups.Any(g => g.Id == group.Id))
+            {
+                groups.Remove(group);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool UpdateJobsGroup(JobsGroup group)
+        {
+            if (!groups.Any(g => g.Id == group.Id))
+            {
+                var currentGroup = groups.FirstOrDefault(g => g.Id == group.Id);
+                currentGroup = group;
+                return true;
+            }
+
+            return false;
+        }
+    }
+}
