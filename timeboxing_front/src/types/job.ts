@@ -21,7 +21,6 @@ class Job {
             this.GroupId = groupId;
         }
         this.StartTime = new Date();
-
     }
 
     public IsFinished(): boolean {
