@@ -1,4 +1,6 @@
 
+using System.Net;
+
 namespace timeboxing_back
 {
     public class Program
@@ -13,9 +15,18 @@ namespace timeboxing_back
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services
+                .AddMvc()
+                .AddControllersAsServices();
+
+            builder.WebHost.ConfigureKestrel(opt =>
+            {
+                opt.Listen(IPAddress.Loopback, 8080);
+            });
 
             var app = builder.Build();
 
+            
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
