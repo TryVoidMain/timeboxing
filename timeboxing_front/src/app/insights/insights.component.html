@@ -1,9 +1,9 @@
-<div>
-    <button (click)="getInsights()">Click me</button>
-    
-    <ul>
+<div class="insights">
+    <ol class="insights__list">
         <li *ngFor="let item of insights!.InsightsList">
             <span>{{item}}</span> 
         </li>
-    </ul>
+    </ol>
+
+    <button class="insights__add-button">Add insight</button>
 </div>

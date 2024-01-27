@@ -1,0 +1,30 @@
+.day {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px var(--color-black) solid;
+    border-radius: 3px;
+}
+
+.day__tasks-block {
+    padding: 10px;
+    grid-row: 1/1;
+    grid-column: 1/1;
+    display: grid;
+    grid-template-rows: 2fr 5fr;
+}
+
+.day__schedule-block {
+    padding: 10px;
+    grid-row: 1/1;
+    grid-column: 2/2;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+
+.day__insights-block {
+    padding: 10px;
+    display: flex;
+    grid-column: span 2;
+    grid-row: 2/2;
+}

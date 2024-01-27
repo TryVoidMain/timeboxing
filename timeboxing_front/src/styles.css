@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --color-aqua:                       #00FFFF;
+    --color-background-primary:         #1b1b1b;
+    --color-background-secondary:       #343434;
+    --color-black:                      #000000;
+    --color-border-primary:             #858585;
+    --color-border-secondary:           #696969;
+    --color-dark-blue:                  #191970;
+    --color-dark-olive:                 #556B2F;
+    --color-dark-orange:                #a5492a;
+    --color-darkorchid: 	            #9932CC;
+    --color-easy-gray:                  #bdbdbd;
+    --color-gold:	                    #FFD700;
+    --color-green-forest: 	            #228B22;
+    --color-indigo:                     #4B0082;
+    --color-khaki:                      #F0E68C;
+    --color-lyme:                       #00FF00;
+    --color-lavender:                   #e6e6fa;
+    --color-light-green:                #90EE90;
+    --color-light-grey:                 #e4e4e4;
+    --color-mid-blue: 	                #7B68EE;
+    --color-mid-turquoise:              #48D1CC;
+    --color-olive: 	                    #808000;
+    --color-orange:                     #FFA500;
+    --color-rose:                       #FFC0CB;
+    --color-salmon: 	                #FA8072;
+    --color-text-primary:               #fff;
+    --color-text-secondary:             #cdcdcd;
+    --color-tomato:                     #FF6347;
+    --color-turquoise:                  #40E0D0;
+    --color-very-light-yellow:          #ffff89;
+    --color-very-soft-lime-green:       #a6f1a6;
+    --color-very-soft-violet:           #ab8fe3;
+    --color-white:                      #ffffff;
+    --color-white-smoke:                #f5f5f5;
+    --color-normal-blue:                #007AFF;
+    }

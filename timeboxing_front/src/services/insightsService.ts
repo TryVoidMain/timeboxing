@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { Insights } from "../types/Insights";
-import { Guid } from "guid-typescript";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 

@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Insights } from '../../types/Insights';
-import { Guid } from "guid-typescript";
 import { NgFor } from '@angular/common';
 import { InsightsService } from '../../services/insightsService';
 
@@ -11,13 +10,17 @@ import { InsightsService } from '../../services/insightsService';
   templateUrl: './insights.component.html',
   styleUrl: './insights.component.css'
 })
-export class InsightsComponent {
+export class InsightsComponent implements OnInit {
   selectedInsight?: string;
   insights?: Insights;
   
   constructor(private insightsService: InsightsService) { }
   
-  public getInsights() {
+  public ngOnInit(): void {
+    this.getInsights();
+  }
+
+  public async getInsights() {
     this.insightsService.getInsights().subscribe((val) => {
       this.insights = val;
     });

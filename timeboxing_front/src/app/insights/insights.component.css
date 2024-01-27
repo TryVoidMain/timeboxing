@@ -1,0 +1,20 @@
+.insights {
+    display: grid;
+    grid-template-rows: 1fr 30px;
+}
+
+.insights__list {
+    border: 1px var(--color-tomato) solid;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.insights__add-button {
+    height: 30px;
+    padding: 3px;
+}
+
+li {
+    margin-left: 15px;
+    padding-left: 10px;
+}
