@@ -13,5 +13,10 @@
         {
             CurrentDay = DateOnly.FromDateTime(DateTime.Now);
         }
+
+        public Day(DateOnly currentDay)
+        {
+            CurrentDay = currentDay;
+        }
     }
 }
