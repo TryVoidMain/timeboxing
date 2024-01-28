@@ -1,13 +1,19 @@
 <div class="day">
     <div class="day__tasks-block">
+        <div>
+            <h4>Daily Jobs</h4>
+        </div>
 
+        <div>
+            <h4>Jobs List</h4>
+        </div>
     </div>
     
     <div class="day__schedule-block">
-
+        <h4>Schedule</h4>
     </div>
     
     <div class="day__insights-block">
-        <app-insights></app-insights>
+        <app-insights [insights]="currentDay!.insights"></app-insights>
     </div>
 </div>

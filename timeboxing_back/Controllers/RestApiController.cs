@@ -41,7 +41,19 @@ namespace timeboxing_back.Controllers
         {
             var reqDate = DateOnly.Parse(date);
 
-            return new Day(reqDate) { };
+            return new Day(reqDate) 
+            { 
+                Insights = new Insights()
+                {
+                    InsightsList = new List<string>()
+                    {
+                        "first insight from day",
+                        "second insight from day",
+                        "third insight from day",
+                        "fourth insight from day"
+                    }
+                }
+            };
         }
     }
 }

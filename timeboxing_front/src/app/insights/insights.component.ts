@@ -1,28 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Insights } from '../../types/Insights';
 import { NgFor } from '@angular/common';
-import { InsightsService } from '../../services/insightsService';
 
 @Component({
   selector: 'app-insights',
   standalone: true,
   imports: [ NgFor ],
   templateUrl: './insights.component.html',
-  styleUrl: './insights.component.css'
+  styleUrl: './insights.component.css',
 })
-export class InsightsComponent implements OnInit {
+export class InsightsComponent {
   selectedInsight?: string;
-  insights?: Insights;
+  @Input() @Output() insights?: Insights;
   
-  constructor(private insightsService: InsightsService) { }
-  
-  public ngOnInit(): void {
-    this.getInsights();
+  constructor() { }
+
+  addInsight(): void {
+    this.insights?.InsightsList.push("New insight");
   }
 
-  public async getInsights() {
-    this.insightsService.getInsights().subscribe((val) => {
-      this.insights = val;
-    });
+  removeInsight(insight: string): void {
+    this.insights!.InsightsList = this.insights!.InsightsList.filter(i => i !== insight);
   }
 }

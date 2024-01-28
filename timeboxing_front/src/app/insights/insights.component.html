@@ -1,9 +1,11 @@
+<h4>Insights</h4>
 <div class="insights">
     <ol class="insights__list">
         <li *ngFor="let item of insights!.InsightsList">
-            <span>{{item}}</span> 
+            <input type="text" value={{item}}>
+            <button type="button" (click)="removeInsight(item)">Remove</button>
         </li>
     </ol>
 
-    <button class="insights__add-button">Add insight</button>
+    <button class="insights__add-button" (click)="addInsight()">Add insight</button>
 </div>

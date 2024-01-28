@@ -5,11 +5,10 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable({providedIn: 'root'})
 export class DayService {
-
     constructor(private http: HttpClient) {}
 
     public GetDay(date: Date): Observable<Day> {
-        const url: string = `${global.serverAddress}api/getday?date=${date.getDate}`;
+        const url: string = `${globalThis.serverAddress}api/getday?date=${globalThis.formatDate(date)}`;
      
         return this.http.get<Day>(url);
     }
