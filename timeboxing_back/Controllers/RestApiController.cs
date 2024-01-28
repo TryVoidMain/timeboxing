@@ -31,13 +31,13 @@ namespace timeboxing_back.Controllers
             };
         }
 
-        [HttpGet("/api/getday/{date}")]
+        [HttpGet("/api/getday")]
         [Consumes(MediaTypeNames.Application.Json)]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Day))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<Day> GetDay([FromRoute(Name = "date")] string date)
+        public ActionResult<Day> GetDay([FromQuery(Name = "date")] string date)
         {
             var reqDate = DateOnly.Parse(date);
 
