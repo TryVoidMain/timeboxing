@@ -8,4 +8,5 @@ export interface Day {
     jobsList: JobsList;
     schedule: Schedule;
     insights: Insights;
+    currentDay: Date;
 }

@@ -3,12 +3,12 @@
     <div class="insights__list">
         <ul>
             <li *ngFor="let item of _viewInsights; index as i" class="insights__list_with-pads">
-                <span>{{i+1}}</span>
+                <span class="insights__list_text-center">{{i+1}}</span>
                 <input type="text" value={{item.insight}}>
-                <button type="button" (click)="removeInsight(item.id)">Remove</button>
+                <button type="button" (click)="removeInsight(item.id)" class="insights__button insights__button_remove">Remove</button>
             </li>
         </ul>
     </div>
 
-    <button class="insights__add-button" (click)="addInsight()">Add insight</button>
+    <button class="insights__button insights__button_add" (click)="addInsight()">Add insight</button>
 </div>

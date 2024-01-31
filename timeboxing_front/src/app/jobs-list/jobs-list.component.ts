@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { JobsGroup } from '../../types/JobsGroup';
 import { NgFor } from '@angular/common';
 import { JobsGroupComponent } from '../jobs-group/jobs-group.component';
+import { JobsList } from '../../types/JobsList';
 
 @Component({
   selector: 'app-jobs-list',
@@ -11,5 +12,5 @@ import { JobsGroupComponent } from '../jobs-group/jobs-group.component';
   styleUrl: './jobs-list.component.css'
 })
 export class JobsListComponent {
-  @Input() public jobsGroups?: Array<JobsGroup>; 
+  @Input() public jobsList?: JobsList; 
 }

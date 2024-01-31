@@ -2,7 +2,7 @@
 {
     public class JobsList : IEntity
     {
-        private List<JobsGroup> groups = new List<JobsGroup>();
+        public List<JobsGroup> Groups { get; set; } = new List<JobsGroup>();
 
         public Guid Id { get; init; }
 
@@ -13,9 +13,9 @@
 
         public bool AddJobsGroup(JobsGroup group)
         {
-            if (!groups.Any(g => g.Id == group.Id || g.Title == group.Title))
+            if (!Groups.Any(g => g.Id == group.Id || g.Title == group.Title))
             {
-                groups.Add(group);
+                Groups.Add(group);
                 return true;
             }
 
@@ -24,9 +24,9 @@
 
         public bool RemoveJobsGroup(JobsGroup group)
         {
-            if (!groups.Any(g => g.Id == group.Id))
+            if (!Groups.Any(g => g.Id == group.Id))
             {
-                groups.Remove(group);
+                Groups.Remove(group);
                 return true;
             }
 
@@ -35,9 +35,9 @@
 
         public bool UpdateJobsGroup(JobsGroup group)
         {
-            if (!groups.Any(g => g.Id == group.Id))
+            if (!Groups.Any(g => g.Id == group.Id))
             {
-                var currentGroup = groups.FirstOrDefault(g => g.Id == group.Id);
+                var currentGroup = Groups.FirstOrDefault(g => g.Id == group.Id);
                 currentGroup = group;
                 return true;
             }

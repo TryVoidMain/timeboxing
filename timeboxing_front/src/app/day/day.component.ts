@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { InsightsComponent } from '../insights/insights.component';
 import { DayService } from '../../services/dayService';
 import { Day } from '../../types/Day';
+import { JobsListComponent } from '../jobs-list/jobs-list.component';
 
 @Component({
   selector: 'app-day',
   standalone: true,
-  imports:  [InsightsComponent],
+  imports:  [InsightsComponent, JobsListComponent],
   templateUrl: './day.component.html',
   styleUrl: './day.component.css'
 })

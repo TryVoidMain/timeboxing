@@ -4,7 +4,7 @@
 }
 
 .insights__list {
-    border: 1px var(--color-tomato) solid;
+    border: 1px var(--color-border-primary) solid;
     border-radius: 3px;
     padding: 5px;
     height: 130px;
@@ -12,9 +12,26 @@
     overflow: auto;
 }
 
-.insights__add-button {
+.insights__list_text-center {
+    align-self: center;
+}
+
+.insights__button {
     height: 30px;
     padding: 3px;
+    color: var(--color-white);
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px var(--color-black) solid;
+}
+
+.insights__button_add {
+    background-color: var(--color-midnight);
+
+}
+
+.insights__button_remove {
+    background-color: var(--color-tomato);
 }
 
 li.insights__list_with-pads {
@@ -27,4 +44,11 @@ div.insights__list > ul {
     list-style-type: none;
     padding: 5px;
     margin: 0; 
+}
+
+.button__primary {
+    background-color: var(--color-midnight);
+    color: var(--color-white);
+    font-weight: bold;
+    border-radius: 5px;
 }

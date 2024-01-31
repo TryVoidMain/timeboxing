@@ -1,4 +1,7 @@
 <div class="day">
+    <div class="day-date">
+        <span>{{currentDay!.currentDay}}</span>
+    </div>
     <div class="day__tasks-block">
         <div>
             <h4>Daily Jobs</h4>
@@ -6,6 +9,7 @@
 
         <div>
             <h4>Jobs List</h4>
+            <app-jobs-list [jobsList]="currentDay!.jobsList" ></app-jobs-list>
         </div>
     </div>
     

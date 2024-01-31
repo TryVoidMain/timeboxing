@@ -11,7 +11,7 @@
         public DateOnly StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
         
-        public Job(string title, string description)
+        public Job(string title, string description = default)
         {
             Id = Guid.NewGuid();
             Status = JobStatus.Initiated;

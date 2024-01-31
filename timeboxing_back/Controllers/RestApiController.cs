@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using System.Net.Mime;
 using timeboxing_back.Types;
 
@@ -51,6 +52,30 @@ namespace timeboxing_back.Controllers
                         "second insight from day",
                         "third insight from day",
                         "fourth insight from day"
+                    }
+                },
+                JobsList = new JobsList() 
+                {
+                    Groups = new List<JobsGroup>()
+                    {
+                        new JobsGroup("Work group 1")
+                        {
+                            Jobs = new List<Job>()
+                            {
+                                new Job("work job 1"),
+                                new Job("work job 2", "work job 2 description"),
+                                new Job("work job 3")
+                            }
+                        },
+                        new JobsGroup("Work group 2")
+                        {
+                            Jobs = new List<Job>()
+                            {
+                                new Job("work job 1"),
+                                new Job("work job 2", "work job 2 description"),
+                                new Job("work job 3")
+                            }
+                        }
                     }
                 }
             };
