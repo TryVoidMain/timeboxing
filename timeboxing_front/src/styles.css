@@ -36,4 +36,7 @@
     --color-white:                      #ffffff;
     --color-white-smoke:                #f5f5f5;
     --color-normal-blue:                #007AFF;
-    }
+
+    --container-width: calc(100vw - 30px);
+    --container-height: calc(100vh - 30px);
+}

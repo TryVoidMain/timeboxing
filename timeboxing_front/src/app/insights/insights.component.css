@@ -7,8 +7,9 @@
     border: 1px var(--color-tomato) solid;
     border-radius: 3px;
     padding: 5px;
-    min-height: 100px;
+    height: 130px;
     min-width: 500px;
+    overflow: auto;
 }
 
 .insights__add-button {
@@ -22,7 +23,7 @@ li.insights__list_with-pads {
     column-gap: 5px;
 }
 
-ul.insights__list {
+div.insights__list > ul {
     list-style-type: none;
     padding: 5px;
     margin: 0; 

@@ -1,12 +1,13 @@
 .container {
+    width: var(--container-width);
+    height: var(--container-height);
+    padding: 5px;
     display: flex;
-    width: 100vw;
-    height: 100vh;
     justify-content: center;
+    align-items: center; 
 }
 
 .app-day {
-    align-self: center;
     display: flex;
-    height: 100vh;
+    height: var(--container-height);
 }
