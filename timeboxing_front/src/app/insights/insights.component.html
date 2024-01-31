@@ -1,11 +1,12 @@
 <h4>Insights</h4>
 <div class="insights">
-    <ol class="insights__list">
-        <li *ngFor="let item of insights!.InsightsList">
-            <input type="text" value={{item}}>
-            <button type="button" (click)="removeInsight(item)">Remove</button>
+    <ul class="insights__list">
+        <li *ngFor="let item of _viewInsights; index as i" class="insights__list_with-pads">
+            <span>{{i+1}}</span>
+            <input type="text" value={{item.insight}}>
+            <button type="button" (click)="removeInsight(item.id)">Remove</button>
         </li>
-    </ol>
+    </ul>
 
     <button class="insights__add-button" (click)="addInsight()">Add insight</button>
 </div>

@@ -7,6 +7,8 @@
     border: 1px var(--color-tomato) solid;
     border-radius: 3px;
     padding: 5px;
+    min-height: 100px;
+    min-width: 500px;
 }
 
 .insights__add-button {
@@ -14,7 +16,14 @@
     padding: 3px;
 }
 
-li {
-    margin-left: 15px;
-    padding-left: 10px;
+li.insights__list_with-pads {
+    display: grid;
+    grid-template-columns: 5% 65% 100px;
+    column-gap: 5px;
+}
+
+ul.insights__list {
+    list-style-type: none;
+    padding: 5px;
+    margin: 0; 
 }
