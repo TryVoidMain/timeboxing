@@ -1,3 +1,7 @@
+ul {
+  padding: 0%;
+}
+
 input {
   position: absolute;
   opacity: 0;
@@ -17,7 +21,7 @@ input {
 .tab-label {
   display: flex;
   justify-content: space-between;
-  padding: 1em;
+  padding: 10px;
   background: var(--color-midnight);
   font-weight: bold;
   cursor: pointer;

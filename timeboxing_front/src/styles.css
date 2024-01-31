@@ -44,3 +44,16 @@
     --container-height: calc(100vh - 30px);
     --container-min-width: 700px;
 }
+@font-face {
+    font-family: 'Lato-regular';
+    src: url(./assets/Lato-Regular.ttf);
+}
+
+html body {
+    font-family: 'Lato-regular';
+}
+
+input, button, span {
+    font: inherit;
+}
+

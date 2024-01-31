@@ -14,7 +14,7 @@
     border: 1px var(--color-border-primary) solid;
     border-radius: 5px;
     background-color: var(--color-light-grey);
-    padding: 3px;
+    padding: 3px;    
 }
 
 .day__tasks-block {
@@ -23,6 +23,10 @@
     grid-column: 1/1;
     display: grid;
     grid-template-rows: 30% 70%;
+}
+
+.day__tasks-block_jobs-list {
+    overflow: auto;
 }
 
 .day__schedule-block {
@@ -39,4 +43,5 @@
     grid-column: span 2;
     grid-row: 3/3;
     min-width: 500px;
+    min-width: 700px;
 }
