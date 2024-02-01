@@ -76,6 +76,15 @@ namespace timeboxing_back.Controllers
                             }
                         }
                     }
+                },
+                DailyJobs = new DailyJobs()
+                {
+                    Jobs = new Job[3]
+                    {
+                        new Job("work daily job 1"),
+                        new Job("work daily job 2"),
+                        new Job("work daily job 3")
+                    }
                 }
             };
         }

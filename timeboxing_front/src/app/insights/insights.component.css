@@ -8,7 +8,7 @@
     border-radius: 3px;
     padding: 5px;
     height: 130px;
-    min-width: 500px;
+    min-width: 700px;
     overflow: auto;
 }
 
@@ -27,16 +27,23 @@
 
 .insights__button_add {
     background-color: var(--color-midnight);
+}
 
+.insights__button_add:hover {
+    background: var(--color-dark-midnight);
 }
 
 .insights__button_remove {
     background-color: var(--color-tomato);
 }
 
+.insights__button_remove:hover {
+    background-color: var(--color-dark-orange);
+}
+
 li.insights__list_with-pads {
     display: grid;
-    grid-template-columns: 5% 65% 100px;
+    grid-template-columns: 3% 80% 15%;
     column-gap: 5px;
 }
 

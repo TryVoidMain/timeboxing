@@ -1,15 +1,16 @@
 <div class="day">
     <div class="day-date">
-        <span><b>{{currentDay!.currentDay}}</b></span>
+        <span><b>{{currentDay?.currentDay}}</b></span>
     </div>
     <div class="day__tasks-block">
         <div>
             <h4>Daily Jobs</h4>
+            <app-daily-jobs [dailyJobs]="currentDay?.dailyJobs"></app-daily-jobs>
         </div>
 
         <div class="day__tasks-block_jobs-list">
             <h4>Jobs List</h4>
-            <app-jobs-list [jobsList]="currentDay!.jobsList" ></app-jobs-list>
+            <app-jobs-list [jobsList]="currentDay?.jobsList" ></app-jobs-list>
         </div>
     </div>
     

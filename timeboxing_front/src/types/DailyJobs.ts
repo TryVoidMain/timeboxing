@@ -1,5 +1,5 @@
 import { Job } from "./Job";
 
 export interface DailyJobs {
-    DailyJobs: Array<Job>;
+    jobs: Array<Job>;
 }
