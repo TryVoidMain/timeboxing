@@ -4,11 +4,12 @@ import { DayService } from '../../services/dayService';
 import { Day } from '../../types/Day';
 import { JobsListComponent } from '../jobs-list/jobs-list.component';
 import { DailyJobsComponent } from '../daily-jobs/daily-jobs.component';
+import { ScheduleComponent } from '../schedule/schedule.component';
 
 @Component({
   selector: 'app-day',
   standalone: true,
-  imports:  [InsightsComponent, JobsListComponent, DailyJobsComponent],
+  imports:  [InsightsComponent, JobsListComponent, DailyJobsComponent, ScheduleComponent],
   templateUrl: './day.component.html',
   styleUrl: './day.component.css'
 })

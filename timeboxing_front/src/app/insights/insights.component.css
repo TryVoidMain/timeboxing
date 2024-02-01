@@ -1,6 +1,6 @@
 .insights {
     display: grid;
-    grid-template-rows: 1fr 30px;
+    grid-template-rows: 1fr auto;
 }
 
 .insights__list {

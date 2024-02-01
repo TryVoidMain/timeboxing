@@ -43,6 +43,16 @@
     --container-width: calc(100vw - 30px);
     --container-height: calc(100vh - 30px);
     --container-min-width: 700px;
+
+    --numDays: 5;
+    --numHours: 10;
+    --timeHeight: 45px;
+    --calBgColor: #fff1f8;
+    --eventBorderColor: #f2d3d8;
+    --eventColor1: #ffd6d1;
+    --eventColor2: #fafaa3;
+    --eventColor3: #e2f8ff;
+    --eventColor4: #d1ffe6;
 }
 @font-face {
     font-family: 'Lato-regular';

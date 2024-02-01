@@ -1,0 +1,24 @@
+<div class="calendar">
+    <div class="timeline">
+      <div class="time-marker">9:00</div>
+      <div class="time-marker">10:00</div>
+      <div class="time-marker">11:00</div>
+      <div class="time-marker">12:00</div>
+      <div class="time-marker">13:00</div>
+      <div class="time-marker">14:00</div>
+      <div class="time-marker">15:00</div>
+      <div class="time-marker">16:00</div>
+      <div class="time-marker">17:00</div>
+      <div class="time-marker">18:00</div>
+    </div>
+    <div class="days">
+        <div class="events">
+          <ng-template ngFor let-block [ngForOf]="schedule?.blocks" >
+            <div class="event start-{{block.startTime.hours}} end-{{block.endTime.hours}} securities">
+                <span class="title">{{block.jobToWork.title}}</span>
+                <span class="time" *ngIf="block.jobToWork.description">{{block.jobToWork.description}}</span>
+            </div>
+          </ng-template>
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 {
     public class Schedule
     {
-        private List<ScheduleBlock> blocks = new List<ScheduleBlock>();
+        public List<ScheduleBlock> Blocks { get; set; } = new List<ScheduleBlock>();
 
         public Schedule() { }
 
@@ -10,7 +10,7 @@
         {
             if (!CheckForCrossovers(block))
             {
-                blocks.Add(block);
+                Blocks.Add(block);
                 return true;
             }
 
@@ -19,17 +19,17 @@
 
         public bool RemoveBlock(ScheduleBlock block)
         {
-            if (blocks.Any(b => b.Id == block.Id))
-                return blocks.Remove(blocks.First(b => b.Id == block.Id)); 
+            if (Blocks.Any(b => b.Id == block.Id))
+                return Blocks.Remove(Blocks.First(b => b.Id == block.Id)); 
 
             return false;
         }
 
         public bool UpdateBlock(ScheduleBlock block)
         {
-            if (blocks.Any(b => b.Id == block.Id))
+            if (Blocks.Any(b => b.Id == block.Id))
             {
-                var currentBlock = blocks.FirstOrDefault(b => b.Id == block.Id);
+                var currentBlock = Blocks.FirstOrDefault(b => b.Id == block.Id);
                 currentBlock = block;
                 return true;
             }
@@ -39,7 +39,7 @@
 
         public bool CheckForCrossovers(ScheduleBlock block)
         {
-            if (!blocks.Any(b => b.StartTime == block.StartTime || b.EndTime == block.EndTime))
+            if (!Blocks.Any(b => b.StartTime == block.StartTime || b.EndTime == block.EndTime))
                 return false;
 
             return true;

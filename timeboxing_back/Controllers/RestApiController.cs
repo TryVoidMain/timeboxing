@@ -61,18 +61,18 @@ namespace timeboxing_back.Controllers
                         {
                             Jobs = new List<Job>()
                             {
-                                new Job("work job 1"),
-                                new Job("work job 2", "work job 2 description"),
-                                new Job("work job 3")
+                                new Job("work group job 1"),
+                                new Job("work group job 2", "work group job 2 description"),
+                                new Job("work group job 3")
                             }
                         },
                         new JobsGroup("Work group 2")
                         {
                             Jobs = new List<Job>()
                             {
-                                new Job("work job 1"),
-                                new Job("work job 2", "work job 2 description"),
-                                new Job("work job 3")
+                                new Job("work group job 1"),
+                                new Job("work group job 2", "work group job 2 description"),
+                                new Job("work group job 3")
                             }
                         }
                     }
@@ -84,6 +84,14 @@ namespace timeboxing_back.Controllers
                         new Job("work daily job 1"),
                         new Job("work daily job 2"),
                         new Job("work daily job 3")
+                    }
+                },
+                Schedule = new Schedule()
+                {
+                    Blocks =
+                    {
+                        new ScheduleBlock(new Job("schedule job 1"), new TimeOnly(12, 0), new TimeOnly(15, 0)),
+                        new ScheduleBlock(new Job("schedule job 2"), new TimeOnly(16, 0), new TimeOnly(17, 0))
                     }
                 }
             };
