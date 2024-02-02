@@ -1,5 +1,6 @@
 <div class="calendar">
     <div class="timeline">
+        <!-- Выглядит, как что-то, что хорошо легло бы в массив-->
       <div class="time-marker">9:00</div>
       <div class="time-marker">10:00</div>
       <div class="time-marker">11:00</div>
@@ -13,6 +14,10 @@
     </div>
     <div class="days">
         <div class="events">
+            <!--Циклы можно писать проще. Я такую запись, давно не видел
+          <ng-template *ngFor="let block of schedule.blocks">
+          (в 17 ангуляре эта запись немного поменялась и стала еще проще)
+            -->
           <ng-template ngFor let-block [ngForOf]="schedule?.blocks" >
             <div class="event start-{{block.startTime.hours}} end-{{block.endTime.hours}} securities">
                 <span class="title">{{block.jobToWork.title}}</span>

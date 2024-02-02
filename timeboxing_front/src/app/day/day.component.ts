@@ -22,6 +22,8 @@ export class DayComponent implements OnInit {
     this.getDay();
   }
 
+  // А почему тут async? Метод никаким образом не использует промисы.
+    // Observable != Promise.
   public async getDay() {
     this.dayService.GetDay(new Date).subscribe((value) => {
       this.currentDay = value;
