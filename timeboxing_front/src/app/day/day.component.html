@@ -1,5 +1,12 @@
 <div class="day">
     <div class="day-date">
+        <!-- Чтобы не писать каждый раз ? после currentDay, можно на самом высоком уровне (<div class="day">)
+        проверить что currentDay есть (*ngIf="currentDay").
+         Если нет - весь блок не будет показываться. Когда с бека придет ответ, ngIf автоматом станет true и все покажется
+         Есть еще один способ работы с observable - async pipe.
+         Вот тут https://medium.com/@kellymarjorie/using-the-angular-async-pipe-b5288135b52a
+         Твой случай описан рядом с текстом " projects are easier to maintain in the long term when components are kept relatively simple. Then our HTML file will look like this:"
+         -->
         <span><b>{{currentDay?.currentDay}}</b></span>
     </div>
     <div class="day__tasks-block">
