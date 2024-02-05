@@ -1,32 +1,25 @@
-<div class="day">
+<div class="day"  *ngIf="currentDay$ | async; let currentDay">
     <div class="day-date">
-        <!-- Чтобы не писать каждый раз ? после currentDay, можно на самом высоком уровне (<div class="day">)
-        проверить что currentDay есть (*ngIf="currentDay").
-         Если нет - весь блок не будет показываться. Когда с бека придет ответ, ngIf автоматом станет true и все покажется
-         Есть еще один способ работы с observable - async pipe.
-         Вот тут https://medium.com/@kellymarjorie/using-the-angular-async-pipe-b5288135b52a
-         Твой случай описан рядом с текстом " projects are easier to maintain in the long term when components are kept relatively simple. Then our HTML file will look like this:"
-         -->
-        <span><b>{{currentDay?.currentDay}}</b></span>
+        <span><b>{{currentDay.currentDay}}</b></span>
     </div>
     <div class="day__tasks-block">
         <div>
             <h4>Daily Jobs</h4>
-            <app-daily-jobs [dailyJobs]="currentDay?.dailyJobs"></app-daily-jobs>
+            <app-daily-jobs [dailyJobs]="currentDay.dailyJobs"></app-daily-jobs>
         </div>
 
         <div class="day__tasks-block_jobs-list">
             <h4>Jobs List</h4>
-            <app-jobs-list [jobsList]="currentDay?.jobsList" ></app-jobs-list>
+            <app-jobs-list [jobsList]="currentDay.jobsList" ></app-jobs-list>
         </div>
     </div>
     
     <div class="day__schedule-block">
         <h4>Schedule</h4>
-        <app-schedule [schedule]="currentDay?.schedule"></app-schedule>
+        <app-schedule [schedule]="currentDay.schedule"></app-schedule>
     </div>
     
     <div class="day__insights-block">
-        <app-insights [insights]="currentDay!.insights"></app-insights>
+        <app-insights [insights]="currentDay.insights"></app-insights>
     </div>
 </div>

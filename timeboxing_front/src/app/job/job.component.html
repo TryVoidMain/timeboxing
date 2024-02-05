@@ -1,5 +1,5 @@
-<div>
-    <!--Ангуляровские формы-->
-    <input value="{{job?.title}}" type="text">
-    <input value="{{job?.description}}" type="text" *ngIf="job?.description">
-</div>
+<!--Ангуляровские формы-->
+<form *ngIf="job">
+    <input [formControl]="title" type="text">
+    <input [formControl]="description" type="text" *ngIf="description">
+</form>

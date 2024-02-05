@@ -12,6 +12,5 @@ import { DayComponent } from './day/day.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // Старайся удалять неиспользуемые переменные и методы
-  title = 'timeboxing_front';
+
 }

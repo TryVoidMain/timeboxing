@@ -14,5 +14,4 @@ export class DailyJobsComponent {
   @Input() public dailyJobs?: DailyJobs;
 
   constructor() { }
-
 }
