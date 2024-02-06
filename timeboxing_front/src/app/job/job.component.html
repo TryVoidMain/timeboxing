@@ -1,5 +1,9 @@
-<!--Ангуляровские формы-->
-<form *ngIf="job">
-    <input [formControl]="title" type="text">
-    <input [formControl]="description" type="text" *ngIf="description">
-</form>
+<div *ngIf="job" style="display: flex; flex-direction: column; border: 1px black solid;">
+    <div style="display: inline-flex;">
+        <p style="margin: 0px; padding: 5px;">{{job.title}}</p>
+        <button type="button" style="height: 20px; align-self: center; font-size: 12px;" (click)="onEditClicked">Edit</button>
+    </div>
+    <div>
+        <span style="padding: 5px;" *ngIf="job.description">{{job.description}}</span>
+    </div>
+</div>
