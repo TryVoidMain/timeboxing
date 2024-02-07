@@ -1,0 +1,25 @@
+.job {
+    display: flex;
+    flex-direction: column;
+    border: 1px var(--color-dark-midnight) solid;
+}
+
+.job__main {
+    display: grid;
+    grid-template-columns: auto 50px;
+}
+
+.job__main-title {
+    padding: 5px;
+}
+
+.job__main-button {
+    height: 20px; 
+    align-self: center; 
+    font-size: 12px;
+    margin: 5px;
+}
+
+.job__additional {
+    padding: 5px;
+}
