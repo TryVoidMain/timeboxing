@@ -12,8 +12,6 @@ import { Insight } from '../../types/Insight';
 })
 export class InsightsComponent {
     selectedInsight?: Insight;
-    // Обычно с _ начинают приватные поля. Но в данном случае это не приватное поле, а публичное, поскольку по умолчанию все поля публичные.
-    // Если хочешь сделать его приватным, то нужно добавить модификатор private
     viewInsights?: Array<Insight>;
 
   get insights() {

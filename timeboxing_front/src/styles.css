@@ -67,3 +67,6 @@ input, button, span {
     font: inherit;
 }
 
+button:hover {
+    cursor: pointer;
+}

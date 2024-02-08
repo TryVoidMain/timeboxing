@@ -1,16 +1,6 @@
 <div class="calendar">
     <div class="timeline">
-        <!-- Выглядит, как что-то, что хорошо легло бы в массив-->
-      <div class="time-marker">9:00</div>
-      <div class="time-marker">10:00</div>
-      <div class="time-marker">11:00</div>
-      <div class="time-marker">12:00</div>
-      <div class="time-marker">13:00</div>
-      <div class="time-marker">14:00</div>
-      <div class="time-marker">15:00</div>
-      <div class="time-marker">16:00</div>
-      <div class="time-marker">17:00</div>
-      <div class="time-marker">18:00</div>
+      <div *ngFor="let time of scheduleTime" class="time-marker">{{time}}</div>
     </div>
     <div class="days">
         <div class="events">
@@ -18,10 +8,12 @@
           <ng-template *ngFor="let block of schedule.blocks">
           (в 17 ангуляре эта запись немного поменялась и стала еще проще)
             -->
-          <ng-template ngFor let-block [ngForOf]="schedule?.blocks" >
-            <div class="event start-{{block.startTime.hours}} end-{{block.endTime.hours}} securities">
-                <span class="title">{{block.jobToWork.title}}</span>
-                <span class="time" *ngIf="block.jobToWork.description">{{block.jobToWork.description}}</span>
+          <ng-template ngFor let-block [ngForOf]="schedule?.blocks">
+            <div *ngIf="schedule">
+              <div  class="event start-{{block.startTime.hours}} end-{{block.endTime.hours}} securities">
+                  <span class="title">{{block.jobToWork.title}}</span>
+                  <span class="time" *ngIf="block.jobToWork.description">{{block.jobToWork.description}}</span>
+              </div>
             </div>
           </ng-template>
         </div>
