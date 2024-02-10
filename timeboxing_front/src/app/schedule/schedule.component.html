@@ -4,10 +4,6 @@
     </div>
     <div class="days">
         <div class="events">
-            <!--Циклы можно писать проще. Я такую запись, давно не видел
-          <ng-template *ngFor="let block of schedule.blocks">
-          (в 17 ангуляре эта запись немного поменялась и стала еще проще)
-            -->
           <ng-template ngFor let-block [ngForOf]="schedule?.blocks">
             <div *ngIf="schedule">
               <div  class="event start-{{block.startTime.hours}} end-{{block.endTime.hours}} securities">

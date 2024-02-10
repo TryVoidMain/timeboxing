@@ -21,6 +21,6 @@ export class DayComponent implements OnInit {
   constructor(private dayService: DayService) {}
 
   public ngOnInit(): void {
-    this.currentDay$ = this.dayService.GetDay(new Date); 
+    this.currentDay$ = this.dayService.getDay(new Date); 
   }
 }
