@@ -91,7 +91,8 @@ namespace timeboxing_back.Controllers
                     Blocks =
                     {
                         new ScheduleBlock(new Job("schedule job 1"), new TimeOnly(12, 0), new TimeOnly(15, 0)),
-                        new ScheduleBlock(new Job("schedule job 2"), new TimeOnly(16, 0), new TimeOnly(17, 0))
+                        new ScheduleBlock(new Job("schedule job 2"), new TimeOnly(16, 0), new TimeOnly(17, 0)),
+                        new ScheduleBlock(new Job("schedule job 3"), new TimeOnly(9, 0), new TimeOnly(11, 0))
                     }
                 }
             };

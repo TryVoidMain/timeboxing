@@ -2,6 +2,8 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { JobComponent } from '../job/job.component';
 import { Schedule } from '../../types/Schedule';
+import { ScheduleBlock } from '../../types/ScheduleBlock';
+import { TimeService } from '../../services/timeService';
 
 @Component({
   selector: 'app-schedule',
@@ -24,4 +26,16 @@ export class ScheduleComponent {
     "18:00"
   ]; 
   @Input() schedule?: Schedule;
+
+constructor(private timeService: TimeService) {}
+
+  public addStartTime(block: ScheduleBlock): string {
+    const time = this.timeService.getHoursFromHHMMSS(block.startTime);
+    return `start-${time}`;
+  }
+
+  public addEndTime(block: ScheduleBlock): string {
+    const time = this.timeService.getHoursFromHHMMSS(block.endTime);
+    return `end-${time}`;
+  }
 }

@@ -8,9 +8,8 @@ import { serverAddress } from "../main";
 @Injectable({providedIn: 'root'})
 export class DayService {
     constructor(private restService: RestService, private dateService: DateService) {}
-    
-    public getDay(date: Date): Observable<Day> {
 
+    public getDay(date: Date): Observable<Day> {
         const url: string = `${serverAddress}api/getday?date=${this.dateService.dateToMMDDYYYYString(date)}`;
      
         return this.restService.getDay(url);

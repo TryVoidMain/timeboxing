@@ -4,12 +4,10 @@
     </div>
     <div class="days">
         <div class="events">
-          <ng-template ngFor let-block [ngForOf]="schedule?.blocks">
-            <div *ngIf="schedule">
-              <div  class="event start-{{block.startTime.hours}} end-{{block.endTime.hours}} securities">
-                  <span class="title">{{block.jobToWork.title}}</span>
-                  <span class="time" *ngIf="block.jobToWork.description">{{block.jobToWork.description}}</span>
-              </div>
+          <ng-template *ngIf="schedule" ngFor let-block [ngForOf]="schedule.blocks">
+            <div class="event securities {{addStartTime(block)}} {{addEndTime(block)}}" *ngIf="block">
+                <span class="title">{{block.jobToWork.title}}</span>
+                <span class="time" *ngIf="block.jobToWork.description">{{block.jobToWork.description}}</span>
             </div>
           </ng-template>
         </div>
