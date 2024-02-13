@@ -1,5 +1,7 @@
 
 using System.Net;
+using timeboxing_back.Services;
+using timeboxing_back.Services.Base;
 
 namespace timeboxing_back
 {
@@ -23,6 +25,9 @@ namespace timeboxing_back
             {
                 opt.Listen(IPAddress.Loopback, 8080);
             });
+
+            // Singleton
+            builder.Services.AddSingleton<ITestService, TestService>();
 
             var app = builder.Build();
 

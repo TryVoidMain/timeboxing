@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
+using timeboxing_back.Services.Base;
 using timeboxing_back.Types;
 
 namespace timeboxing_back.Controllers
@@ -7,9 +8,10 @@ namespace timeboxing_back.Controllers
     [ApiController]
     public class RestApiController : ControllerBase
     {
-        public RestApiController() 
+        private readonly ITestService _testService;
+        public RestApiController(ITestService testService) 
         {
-            
+            _testService = testService;
         }
 
         [HttpGet("/api/getinsights")]
@@ -41,61 +43,7 @@ namespace timeboxing_back.Controllers
         {
             var reqDate = DateOnly.Parse(date);
 
-            return new Day(reqDate) 
-            { 
-                Insights = new Insights()
-                {
-                    InsightsList = new List<string>()
-                    {
-                        "first insight from day",
-                        "second insight from day",
-                        "third insight from day",
-                        "fourth insight from day"
-                    }
-                },
-                JobsList = new JobsList() 
-                {
-                    Groups = new List<JobsGroup>()
-                    {
-                        new JobsGroup("Work group 1")
-                        {
-                            Jobs = new List<Job>()
-                            {
-                                new Job("work group job 1"),
-                                new Job("work group job 2", "work group job 2 description"),
-                                new Job("work group job 3")
-                            }
-                        },
-                        new JobsGroup("Work group 2")
-                        {
-                            Jobs = new List<Job>()
-                            {
-                                new Job("work group job 1"),
-                                new Job("work group job 2", "work group job 2 description"),
-                                new Job("work group job 3")
-                            }
-                        }
-                    }
-                },
-                DailyJobs = new DailyJobs()
-                {
-                    Jobs = new Job[3]
-                    {
-                        new Job("work daily job 1"),
-                        new Job("work daily job 2"),
-                        new Job("work daily job 3")
-                    }
-                },
-                Schedule = new Schedule()
-                {
-                    Blocks =
-                    {
-                        new ScheduleBlock(new Job("schedule job 1"), new TimeOnly(12, 0), new TimeOnly(15, 0)),
-                        new ScheduleBlock(new Job("schedule job 2"), new TimeOnly(16, 0), new TimeOnly(17, 0)),
-                        new ScheduleBlock(new Job("schedule job 3"), new TimeOnly(9, 0), new TimeOnly(11, 0))
-                    }
-                }
-            };
+            return _testService.GetTestDay(reqDate);
         }
     }
 }
