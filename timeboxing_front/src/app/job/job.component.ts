@@ -11,10 +11,23 @@ import { NgIf } from '@angular/common';
 })
 export class JobComponent {
   @Input() public job?: Job;
+  public jobForEdit?: Job;
+  public dialog?: HTMLDialogElement;
 
   constructor() {}
 
   public onEditClicked() {
+    this.jobForEdit = this.job;
+    this.dialog = document.querySelector('#jobsdialog')!;
+    this.dialog.showModal();
+  }
 
+  public onApply() {
+    this.job = this.jobForEdit!;
+    this.dialog?.close();
+  }
+
+  public onCancel() {
+    this.dialog?.close();
   }
 }

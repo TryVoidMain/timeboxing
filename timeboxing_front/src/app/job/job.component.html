@@ -1,9 +1,18 @@
 <div *ngIf="job" class="job">
     <div class="job__main">
         <span class="job__main-title">{{job.title}}</span>
-        <button type="button" class="job__main-button" (click)="onEditClicked">Edit</button>
+        <button type="button" class="job__main-button" (click)="onEditClicked()">Edit</button>
     </div>
     <div class="job__additional" *ngIf="job.description">
         <span>{{job.description}}</span>
     </div>
+
+    <dialog id="jobsdialog" *ngIf="jobForEdit">
+        <form method="dialog">
+            <input type="text" value="{{jobForEdit!.title}}">
+            <input type="text" value="{{jobForEdit!.description}}">
+            <button type="button" (click)="onApply()">ok</button>
+            <button type="button" (click)="onCancel()">cancel</button>
+        </form>
+    </dialog>
 </div>
