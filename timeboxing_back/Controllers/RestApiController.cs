@@ -20,17 +20,11 @@ namespace timeboxing_back.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Insights))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<Insights> GetInsights()
+        public ActionResult<Insights> GetInsights([FromQuery(Name = "date")] string date)
         {
-            return new Insights() 
-            { 
-                InsightsList = new List<string>()
-                {
-                    "first string",
-                    "second string",
-                    "third string"
-                }
-            };
+            var reqDate = DateOnly.Parse(date);
+
+            return _testService.GetTestInsights(reqDate);
         }
 
         [HttpGet("/api/getday")]

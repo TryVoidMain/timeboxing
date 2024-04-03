@@ -9,16 +9,18 @@ namespace timeboxing_back.Services
 
         public Day GetTestDay(DateOnly date)
         {
+            var dateString = date.ToShortDateString();
+
             return new(date)
             {
                 Insights = new()
                 {
                     InsightsList = new()
                     {
-                        "first insight from day",
-                        "second insight from day",
-                        "third insight from day",
-                        "fourth insight from day"
+                        $"first insight from day {dateString}",
+                        $"second insight from day {dateString}",
+                        $"third insight from day {dateString}",
+                        $"fourth insight from day {dateString}"
                     }
                 },
                 JobsList = new()
@@ -62,6 +64,21 @@ namespace timeboxing_back.Services
                         new(new("schedule job 2"), new TimeOnly(16, 0), new TimeOnly(17, 0)),
                         new(new("schedule job 3"), new TimeOnly(9, 0), new TimeOnly(11, 0))
                     }
+                }
+            };
+        }
+
+        public Insights GetTestInsights(DateOnly date)
+        {
+            var dateString = date.ToShortDateString();
+
+            return new Insights()
+            {
+                InsightsList = new List<string>()
+                {
+                    $"first insight string for day {dateString}",
+                    $"second insight string for day {dateString}",
+                    $"third insight string for day {dateString}"
                 }
             };
         }
