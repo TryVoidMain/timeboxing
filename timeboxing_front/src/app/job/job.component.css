@@ -23,3 +23,9 @@
 .job__additional {
     padding: 5px;
 }
+
+.modal__grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}

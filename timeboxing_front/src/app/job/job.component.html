@@ -9,10 +9,12 @@
 
     <dialog id="jobsdialog" *ngIf="jobForEdit">
         <form method="dialog">
-            <input type="text" value="{{jobForEdit!.title}}">
-            <input type="text" value="{{jobForEdit!.description}}">
-            <button type="button" (click)="onApply()">ok</button>
-            <button type="button" (click)="onCancel()">cancel</button>
+            <div class="modal__grid">
+                <input type="text" [(ngModel)]="jobForEdit!.title">
+                <input type="text" [(ngModel)]="jobForEdit!.description">
+                <button type="button" (click)="onApply()">ok</button>
+                <button type="button" (click)="onCancel()">cancel</button>
+            </div>
         </form>
     </dialog>
 </div>
